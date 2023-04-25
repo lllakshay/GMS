@@ -1,0 +1,42 @@
+<div class="row">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+<app-sidenav></app-sidenav>
+<div class="row"style="background: rgb(237,172,201);
+background: radial-gradient(circle, rgba(237,172,201,1) 0%, rgba(197,211,228,1) 100%); padding-bottom: 5%;padding-top: 5%;align-self: center;">
+
+   <div class="row">
+    <div >
+    <br>
+  <div>
+    
+    <table class="table table-light table-striped" >
+      <tbody >
+      <tr >
+        <td>Name</td>
+        <td>Email-Id</td>
+        <td>Mobile Number</td>
+        <td>Complaint</td>
+        <td>Status</td>
+        <td>Action</td>
+      </tr>
+      <tr *ngFor="let complaints of complaint">
+        <td>{{complaints.userId.name}}</td>
+        <td>{{complaints.userId.emailId}}</td>
+        <td>{{complaints.userId.userMobileNumber}}</td>
+        <td>{{complaints.complaintDescription}}</td>
+        <td>{{complaints.status}}</td>
+        <td><button class="btn btn-success" (click)="completeComplaint(complaints.complaintId)">Complete</button>&nbsp;
+          <button class="btn btn-warning" routerLink="/transferComplaint/{{complaints.complaintId}}">Transfer</button></td>
+
+      </tr>
+
+    </tbody>
+    </table>
+    </div>
+    </div>
+    
+  
+
+
+    

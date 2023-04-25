@@ -1,0 +1,15 @@
+<app-citizen-navbar></app-citizen-navbar><br><br><br><br><br>
+<div class="d-flex justify-content-center align-items-center container">
+    <div class="card py-5 px-3" style="height: 300px; width: auto;">
+        <h1 class="m-0" style="text-align: center;">Enter  OTP</h1><br>
+        <div class="input-group mb-3"><br>
+        <div class="input-group-prepend">
+          
+            <span class="input-group-text" id="basic-addon1" >OTP</span>
+          </div>
+        <input class="form-control" type="text" [(ngModel)]="inotp">
+        </div><br>
+       <button class="btn btn-primary" (click)="validateOtp()">Submit</button>
+        
+    </div>
+</div>

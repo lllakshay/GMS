@@ -1,0 +1,34 @@
+<div class="row">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+<app-sidenav></app-sidenav>
+<div class="row" style="background: rgb(237,172,201);
+background: radial-gradient(circle, rgba(237,172,201,1) 0%, rgba(197,211,228,1) 100%); padding-bottom: 5%;padding-top: 5%;align-self: center;">
+   
+   <div class="row">
+    <div >
+    <br>
+  <div>
+<div class="grid-container">
+   <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Department: {{departmentName}}
+                
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+         <div>
+        <h1>Welcome {{name}} </h1>
+          </div>
+
+         <button class="btn btn-info" routerLink="/viewComplaint">View Compliant</button>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+</div>
+</div>

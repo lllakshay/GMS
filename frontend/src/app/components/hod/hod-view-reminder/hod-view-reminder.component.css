@@ -1,0 +1,12 @@
+table {
+  margin-left: 15%;
+  width: 75%;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.scrollable-main {
+  overflow-y: scroll;
+  height: 87vh;
+  background-color: #161625;
+}/*# sourceMappingURL=hod-view-reminder.component.css.map */

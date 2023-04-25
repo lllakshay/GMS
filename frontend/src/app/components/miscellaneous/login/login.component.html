@@ -1,0 +1,41 @@
+<app-citizen-navbar></app-citizen-navbar>
+  <div class="login-text" style="margin-top: 30px;">
+  <div [formGroup]="login">
+ 
+  <mat-card class="example-card bg-light text-center text-dark">
+    <mat-card-title class="display-6">Login</mat-card-title>
+    <span *ngIf="status" class="bg-danger">{{msg}}</span><br>
+    <br/>
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="userName">
+    </mat-form-field><br/>
+    <mat-form-field appearance="fill" class="password">
+      <mat-label>Enter password</mat-label>
+      <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+        <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field><br/>
+    
+    
+    <!-- <input type="checkbox" (change)="rememberMe($event)"> <label for="rememberMe">Remember me</label><br/><br/> -->
+    <div class="captcha">
+      <ngx-recaptcha2 [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2>
+    </div>  <br>
+    <div class="checkbox" >
+      <!-- <label>
+        Remember Me <input type="checkbox" name="rememberMe"   (click)='rememberMe($event)'> 
+        
+      </label> -->
+    </div><br>
+    <div>
+      <button class="btn btn-success" (click)="submit()">Login</button><br/><br/>
+      <p>New User ? <a href="#" routerLink="/registerUser">Register here</a></p>
+      <p>Forget Password ? <a routerLink="/forgetPassword">Click Here</a></p>
+    </div>
+    
+    </mat-card>
+  </div>
+</div>
+

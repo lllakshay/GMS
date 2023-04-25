@@ -1,0 +1,35 @@
+<div class="row">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+
+<div class="row">
+   <app-sidenav></app-sidenav>
+   <div class="row"style="background: rgb(237,172,201);
+   background: radial-gradient(circle, rgba(237,172,201,1) 0%, rgba(197,211,228,1) 100%); padding-bottom: 5%;padding-top: 5%;align-self: center;">
+    <div >
+    <br>
+  <div>
+<div [formGroup]="trnsferComplaint" >
+    <mat-card class="example-card bg-light text-center text-dark">
+      <mat-card-title class="display-6">Transfer Complaint</mat-card-title>
+      <br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Complaint Description</mat-label>
+        <input matInput formControlName="complaintDescription">
+      </mat-form-field><br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Select Department</mat-label>
+        <mat-select formControlName="addDepartment">
+          <div *ngFor="let department of departmentName">
+          <mat-option [value]="department.departmentId">{{department.departmentName}}</mat-option>
+          
+          </div>
+          
+        </mat-select >
+      </mat-form-field><br>
+    
+      <button class="btn btn-primary" (click)="transferDepartment()">Transfer Complaint</button>
+    </mat-card>
+    </div>
+    </div>
+</div>

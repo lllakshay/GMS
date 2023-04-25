@@ -1,0 +1,95 @@
+
+
+    <div *ngIf="status==='ADMIN'"  id="maindiv" class="upnav">
+      <nav class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #4058cf; ">
+        <a class="navbar-brand" href="#" style="color: white;font-style: italic;">Welcome Admin!! </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText"style="color: white;font-style: italic;">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/adminDash" style="color: white; font-size:large;margin-left: 10px;">Dashboard <span class="sr-only" >(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/addHod" style="color: white; font-size:large;margin-left: 10px;">Add Department HOD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/addDepartment" style="color: white; font-size:large;margin-left: 10px;"> Add Department</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/unlockAccount" style="color: white; font-size:large;margin-left: 10px;">Unlock Account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/viewLog"style="color: white; font-size:large;margin-left: 10px;">Log </a>
+             </li>
+          </ul>
+          <span class="navbar-text">
+            <a (click)="logout()"style="color: white; font-size:large;margin-left: 10px;">Logout</a>
+          </span>
+        </div>
+      </nav>
+           
+    </div>
+
+    <!---HOD sidebar-->
+    <div *ngIf="status==='DEPARTMENT_HEAD'"  id="maindiv" class="upnav" >
+        <nav class="navbar navbar-expand-lg navbar-light"
+        style="background-color: #4058cf; ">
+            <a class="navbar-brand" href="#"style="color: white;font-style: italic;">Welcome HOD!! </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText"style="color: white;font-style: italic;">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/hodDash"style="color: white; font-size:large;margin-left: 10px;">Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/viewComplaint"style="color: white; font-size:large;margin-left: 10px;">View Complaint</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/viewReminder"style="color: white; font-size:large;margin-left: 10px;">View Reminder Complaint</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/updatePassword"style="color: white; font-size:large;margin-left: 10px;">Update Password</a>
+                  </li>
+              </ul>
+              <span class="navbar-text">
+                <a (click)="logout()"style="color: white; font-size:large;margin-left: 10px;">Logout</a>
+              </span>
+            </div>
+          </nav>
+        </div>
+
+
+         <!---Citizen sidebar-->
+         <div *ngIf="status==='CITIZEN'"  id="maindiv" class="upnav" >
+            <nav class="navbar navbar-expand-lg navbar-light"
+             style="background-color: #4058cf; ">
+                <a class="navbar-brand" href="#" style="color: white;font-style: italic;">Welcome {{name}} </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText" >
+                  <ul class="navbar-nav mr-auto" >
+                    <li class="nav-item active">
+                      <a class="nav-link" routerLink="/home" style="color: white; font-size:large;margin-left: 10px;">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/makeComplaint"style="color: white;font-size:large;margin-left: 10px;">Register Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/listComplaints"style="color: white;font-size:large;margin-left: 10px;">My Complaints</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/settings"style="color: white;font-size:large;margin-left: 10px;">Change Password</a>
+                      </li>
+                  </ul>
+                  <span class="navbar-text">
+                    <a (click)="logout()"  style="color: white; font-size:large;">Logout</a>
+                  </span>
+                </div>
+              </nav>
+         </div>

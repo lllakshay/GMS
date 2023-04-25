@@ -1,0 +1,56 @@
+.login-image {
+  -webkit-filter: blur(3px);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .login-text {
+  // background-color: rgb(201, 157, 193); /* Fallback color */
+  // background-color: rgb(201, 157, 193); /* Black w/opacity/see-through */
+  color: black;
+  font-weight: bold;
+  border: 0px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 70vh;
+  padding: 0px;
+  text-align: center;
+  margin: auto;
+  }
+  
+  .login-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 20px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .login-text button:hover {
+    background-color: rgb(62, 124, 143);
+    color: grey;
+  }
+  .button{
+    text-align: center;
+  }
+  .forget-password{
+    color: black !important
+  }
+  .password{
+    width:33vh
+  }
+  a{
+    color: rgb(236, 11, 11);
+  }
+  .captcha{
+margin-left: 15%;
+  }
