@@ -1,0 +1,66 @@
+<div class="row">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+
+<div class="row">
+  <app-sidenav></app-sidenav>
+  <div class="row"
+    style="background: rgb(237,172,201);
+   background: radial-gradient(circle, rgba(237,172,201,1) 0%, rgba(197,211,228,1) 100%); padding-bottom: 5%;padding-top: 5%;align-self: center;">
+    <div>
+
+      <div class="row text-center  w-20 mt-3 mx-auto">
+
+        <div class="col-md-2 mx-auto">
+          <span *ngIf="valid" class="alert alert-danger">{{msg}}</span>
+        </div>
+      </div>
+      <div [formGroup]="addHod">
+        <mat-card class="example-card bg-white text-center text-dark">
+          <mat-card-title class="display-6">Add Head of Department</mat-card-title>
+          <br />
+          <mat-form-field appearance="fill">
+
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="hodName">
+          </mat-form-field><br />
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" formControlName="email" required>
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+          </mat-form-field><br />
+          <mat-form-field appearance="fill">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput formControlName="hodMobileNumber">
+          </mat-form-field><br />
+
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input type="text" (change)="checkUserName()" placeholder="Username" matInput formControlName="hodUserName">
+          </mat-form-field><br />
+          <mat-form-field appearance="fill" class="password">
+            <mat-label>Enter password</mat-label>
+            <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide1">
+              <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field><br />
+          <mat-form-field appearance="fill" class="password">
+            <mat-label>Confirm password</mat-label>
+            <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="confirmPassword">
+            <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide2">
+              <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field><br />
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="hodAddress"></textarea>
+          </mat-form-field><br />
+
+          <button class="btn btn-success" (click)="registerHod()">Register</button>
+        </mat-card>
+      </div>
+    </div>
+  </div>

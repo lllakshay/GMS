@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+  margin: auto;
+}
+
+.complaint{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+table, th, td {
+  border: 2px solid rgb(255, 255, 255);
+  border-collapse: collapse;
+  color: rgb(34, 16, 78);
+
+  font-family: Arial, Helvetica, sans-serif
+}
+.scrollable-main{
+  overflow-y: scroll;
+  height: 87vh;
+  background-color: rgb(101, 102, 52);
+}
+ngb-rating {
+  color: #FFC107;
+  font-size: 40px;
+}
+.star {
+color: #FFC107;
+}
+
+th{
+  color: white;
+  font-size: medium;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

@@ -1,0 +1,32 @@
+<div class="row">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+
+<div class="row">
+   <app-sidenav></app-sidenav>
+   <div class="row">
+    <div >
+    <br>
+<div [formGroup]="editDepartment" >
+    <mat-card class="example-card bg-white text-center text-black">
+      <mat-card-title class="display-6">Edit Department</mat-card-title>
+      <br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Department Name</mat-label>
+        <input matInput formControlName="departmentName">
+      </mat-form-field><br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Assigned Head of Department</mat-label>
+        <mat-select formControlName="addHod">
+          <div *ngFor="let hod of hods">
+          <mat-option [value]="hod.userId">{{hod.name}}</mat-option>
+          
+          </div>
+          
+        </mat-select >
+      </mat-form-field><br>
+    
+      <button class="btn btn-primary" (click)="updateDepartment()">Edit Department</button>
+    </mat-card>
+    </div>
+    </div>

@@ -1,0 +1,43 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+.scrollable-main{
+  overflow-y: scroll;
+  height: 87vh;
+  background-color: rgb(22, 22, 37);
+}
+
+table {
+  width: 100%;
+  margin: auto;
+}
+
+.complaint{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+table, th, td {
+  border: 2px solid rgb(17, 16, 16);
+  border-collapse: collapse;
+  color: rgb(24, 22, 22);
+}
+

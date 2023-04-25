@@ -1,0 +1,22 @@
+mat-card{
+    margin: 3%;
+    width: 18rem; 
+    height: 20rem;
+    float: left;
+}
+
+.print{
+    float:right
+}
+#pdfTable{
+    display: none;
+    margin: 3%;
+}
+.scrollable-main{
+    overflow-y: scroll;
+    height: 87vh;
+    background-color: rgb(22, 22, 37);
+  }
+  .addDepartment{
+      margin-top: 3rem;
+  }

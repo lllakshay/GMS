@@ -1,0 +1,51 @@
+<div class="row">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+
+<div class="row">
+   <app-sidenav></app-sidenav>
+   <div class="row">
+    <div >
+    <br>
+  <div>
+<div class="addHod">
+  <button class="btn btn-primary" routerLink="/addHod">Add Head of Department</button>
+  <button class="btn btn-primary print" (click)="SavePDF()"><i class="fas fa-print"></i>&nbsp;Generate Report</button>
+</div>
+<mat-card *ngFor="let hod of hods" class="example-card bg-dark text-white">
+        <mat-card-header>
+          <mat-card-title class="display-6">{{hod.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <hr/>
+          <p>Assigned Department:</p>
+          <p *ngIf="hod.departmentName">{{hod.departmentName}}</p>
+          <p *ngIf="!hod.departmentName">Not Assigned</p>
+          <hr/>
+          <p>Joined Date:</p>
+          <p>{{hod.userTimestamp}}</p>
+          <hr/>
+          <button mat-raised-button class="btn btn-warning" routerLink="/editHod/{{hod.userId}}" >Edit</button>&nbsp;
+          <button mat-raised-button color="warn" (click)="deleteHod(hod.userId)">Delete</button>
+        </mat-card-content>
+      </mat-card><br/>
+      <div class="container" id="pdfTable" #pdfTable>
+       
+        <h1><u>Pune Municipal Corporation</u></h1>
+        <h6>Head of Department Report:</h6>
+        <table class="table table-dark ">
+          
+            <tr>  
+                <th>Head of Department</th>  
+                <th>Department Name</th>  
+                <th>Joined Date</th>  
+            </tr>  
+            <tr *ngFor="let hod of hods">  
+                <th>{{hod.name}}</th>  
+                <th *ngIf="hod.departmentName">{{hod.departmentName}}</th>
+                <th *ngIf="!hod.departmentName">Not Assigned</th>  
+                <th>{{hod.userTimestamp}}</th>  
+            </tr>  
+        </table>  
+    </div> 
+    </div>

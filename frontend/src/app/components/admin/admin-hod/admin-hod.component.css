@@ -1,0 +1,25 @@
+mat-card {
+  margin: 3%;
+  width: 18rem;
+  height: 20rem;
+  float: left;
+}
+
+.addHod {
+  margin-top: 2rem;
+}
+
+.print {
+  float: right;
+}
+
+#pdfTable {
+  display: none;
+  margin: 3%;
+}
+
+.scrollable-main {
+  overflow-y: scroll;
+  height: 87vh;
+  background-color: #161625;
+}/*# sourceMappingURL=admin-hod.component.css.map */

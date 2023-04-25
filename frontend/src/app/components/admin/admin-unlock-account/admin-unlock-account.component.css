@@ -1,0 +1,16 @@
+table {
+  margin-left: 15%;
+  width: 75%;
+  text-align: center;
+}
+
+mat-paginator {
+  margin-left: 15%;
+  width: 75%;
+}
+
+.scrollable-main {
+  overflow-y: scroll;
+  height: 87vh;
+  background-color: #161625;
+}/*# sourceMappingURL=admin-unlock-account.component.css.map */

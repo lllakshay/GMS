@@ -1,0 +1,55 @@
+<div class="row">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+
+<div class="row">
+  <div class="col-sm-2 bg-dark">
+   <app-sidenav></app-sidenav>
+  </div>
+  <div class="col-sm-10 scrollable-main">
+<div [formGroup]="editHod" >
+ 
+    <mat-card class="example-card bg-dark text-center text-white">
+      <mat-card-title class="display-6">Edit Head of Department</mat-card-title>
+      <br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="hodName">
+      </mat-form-field><br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field><br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput formControlName="hodMobileNumber">
+      </mat-form-field><br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="hodUserName">
+      </mat-form-field><br/>
+      <mat-form-field appearance="fill" class="password">
+        <mat-label>Enter password</mat-label>
+        <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+          <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field><br/>
+      <mat-form-field appearance="fill" class="password">
+        <mat-label>Confirm password</mat-label>
+        <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="confirmPassword"> 
+        <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+          <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field><br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <textarea matInput formControlName="hodAddress" ></textarea>
+      </mat-form-field><br/>
+      
+        <button class="btn btn-success" (click)="updateHod()">Edit Head of Department</button>
+      </mat-card>
+    </div>
+    </div>
+    

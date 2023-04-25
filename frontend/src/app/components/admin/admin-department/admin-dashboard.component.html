@@ -1,0 +1,70 @@
+<div class="row">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+
+<div class="row" style="background: rgb(237,172,201);
+background: radial-gradient(circle, rgba(237,172,201,1) 0%, rgba(197,211,228,1) 100%); padding-bottom: 5%;padding-top: 5%;align-self: center;">
+  <app-sidenav></app-sidenav>
+  <div class="row">
+    <div>
+      <br>
+      <div>
+        <div class="addDepartment">
+          <!-- <button class="btn btn-success" routerLink="/addDepartment">Add Department</button> -->
+          <button class="btn btn-primary print" (click)="SavePDF()"><i class="fas fa-print"></i>&nbsp;Generate
+            Report</button>
+        </div>
+
+        <table class="table" style="text-align: center;">
+
+
+          <tr>
+
+            <th>Department Name</th>
+            <th>HOD Name</th>
+            <th>Creation Time</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+          </tr>
+          <tr *ngFor="let department of hods">
+
+
+            <td>
+              {{department.departmentName}}
+            </td>
+            <td>
+              {{department.hodName}}
+            </td>
+            <td>
+              {{department.departmentTimestamp | date:'MMMM d, y'}}
+            </td>
+            <td>
+              <button mat-raised-button class="btn btn-warning"
+                routerLink="/editDepartment/{{department.departmentId}}">Edit</button>
+            </td>
+            <td>
+              <button mat-raised-button color="warn" (click)="deleteDepartment(department.departmentId)">Delete</button>
+            </td>
+
+          </tr>
+        </table>
+        <div class="container" id="pdfTable" #pdfTable>
+          <h1><u>GMS</u></h1>
+          <h6>Department Report:</h6>
+          <table class="table table-dark ">
+            <tr>
+              <th>Department Name</th>
+              <th>Head of Department</th>
+              <th>Created Date</th>
+            </tr>
+            <tr *ngFor="let department of hods">
+              <th>{{department.departmentName}}</th>
+              <th>{{department.hodName}}</th>
+              <th>{{department.departmentTimestamp}}</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

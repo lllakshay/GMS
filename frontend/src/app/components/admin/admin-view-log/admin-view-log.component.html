@@ -1,0 +1,101 @@
+<div class="row">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+
+<div class="row">
+   <app-sidenav></app-sidenav>
+   <div class="row">
+    <div >
+    <br>
+  <div>
+  <mat-card *ngFor="let complaint of viewLog" class="example-card bg-dark text-white">
+          <mat-card-header>
+            <mat-card-title class="display-6">{{complaint.departmentId.departmentName}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <hr/>
+            <p>Citizen Name:</p>
+            <p>{{complaint.userId.name}}</p>
+            <hr/>
+            <p>Complaint Description:</p>
+            <p>{{complaint.complaintDescription}}</p>
+            <p></p>
+            
+            <hr/>
+            <p>Complaint Date:</p>
+            <p>{{complaint.complaintRegisterDate | date:'MMMM d, y'}}</p>
+            <hr/>
+            <p>Complaint Resolved Date:</p>
+            <p>{{complaint.complaintResolveDate | date:'MMMM d, y'}}</p>
+            <p *ngIf="!complaint.complaintResolveDate">Not completed yet</p>
+            <hr/>
+            <p>Complaint Status:</p>
+            <p>{{complaint.status}}</p>
+            <hr/>
+           <div class="icon">
+            <i class="fas fa-heart" (click)="viewLike(complaint.complaintId)" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+              <p></p> 
+              <p>{{complaint.likeCount}}</p>
+              <p *ngIf="!complaint.likeCount">0</p>
+            </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="icon">
+            
+            <i class="fas fa-comments" (click)="viewComment(complaint.complaintId)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <p></p>
+              <p>{{complaint.commentCount}}</p>
+              <p *ngIf="!complaint.commentCount">0</p>
+            </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="icon">
+            
+            <i class="fas fa-star">
+              <p></p>
+              <p>{{complaint.ratingCount}}</p>
+              <p *ngIf="!complaint.ratingCount">0</p>
+            </i>
+          </div>
+          </mat-card-content>
+        </mat-card><br/>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">View Comment</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div *ngFor="let comment of comments "  class="modal-body">
+               <span class="float-start"><strong>{{comment.userId.name}}</strong>&nbsp;&nbsp;{{comment.commentTimestamp | date:'dd-MMM-y'}}&nbsp;{{comment.commentTimestamp | date:'hh-mm-ss'}}</span>
+               <span class="float-end"><p>{{comment.comment}}</p></span>
+              </div>
+              <hr>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">View Like</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div *ngFor="let like of likes "  class="modal-body">
+               <span class="float-start"><strong>{{like.userId.name}}</strong>&nbsp;&nbsp;{{like.likeTimestamp | date:'dd-MMM-y'}}&nbsp;{{like.likeTimestamp | date:'hh-mm-ss'}}</span>
+               </div>
+              <hr>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+</div>
+       

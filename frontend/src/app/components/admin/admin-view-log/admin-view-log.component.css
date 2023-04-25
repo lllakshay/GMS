@@ -1,0 +1,16 @@
+mat-card {
+  margin: 3%;
+  width: 18rem;
+  height: auto;
+  float: left;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.scrollable-main {
+  overflow-y: scroll;
+  height: 87vh;
+  background-color: #161625;
+}/*# sourceMappingURL=admin-view-log.component.css.map */
